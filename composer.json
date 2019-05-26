@@ -1,0 +1,11 @@
+{
+	"name": "akiyatkin/menu",
+	"conf":"akiyatkin\\menu\\Menu",
+	"autoload": {
+		"psr-4": { "akiyatkin\\menu\\": "" }
+	},
+	"require":{
+		"infrajs/path":"~1",
+		"infrajs/ans":"~1"
+	}
+}
