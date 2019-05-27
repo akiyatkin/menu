@@ -11,13 +11,13 @@ $src = Ans::get('src','string','~pages/Параметры.xlsx');
 $list = Load::loadJSON('-excel/get/group/'.$name.'/?src='.$src);
 
 
-if (isset($list['data']['data'])) $list = $list['data']['data'];
-else $list = array();
+if (isset($list['data']['data'])) $list = $list['data'];
+else $list = array('data'=>[]);
 
 $prev = array('Уровень' => false);
 $ans = &$prev;
 $levels = [];
-foreach ($list as $i => &$row) {
+foreach ($list['data'] as $i => &$row) {
 	if ($row['Уровень'] < $prev['Уровень']) {
 		$row['parent'] = &$prev['parent']['parent'];
 	} else if ($row['Уровень'] > $prev['Уровень']) {
@@ -39,5 +39,6 @@ Xlsx::runGroups($ans, function &(&$group){
 	$r = null;
 	return $r;
 });
-
-return Ans::ans($ans['childs']);
+$ans['descr'] = $list['descr'];
+unset($ans['Уровень']);
+return Ans::ans($ans);
