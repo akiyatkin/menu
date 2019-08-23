@@ -17,7 +17,9 @@ else $list = array('data'=>[]);
 $prev = array('Уровень' => false);
 $ans = &$prev;
 $levels = [];
+
 foreach ($list['data'] as $i => &$row) {
+	if(empty($row['Уровень'])) $row['Уровень'] = 1;
 	if ($row['Уровень'] < $prev['Уровень']) {
 		$row['parent'] = &$prev['parent']['parent'];
 	} else if ($row['Уровень'] > $prev['Уровень']) {
