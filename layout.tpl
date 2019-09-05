@@ -1,36 +1,32 @@
 {root:}
 	<style>
+		#{div} {
+			font-size:110%;
+		}
 		#{div} .submenu {
 			background-color:{config.subbg};
-			padding:0px 1rem;
 			padding-bottom:0.5rem;
 			text-transform: none;
 			position:absolute;
 			display:none;
-
 			border-radius: 0 0 20px 10px;
 		}
 		#{div} .submenu a {
+			padding:0px 10px;
 			margin-bottom:3px;
 			display:block;	
 		}
 		#{div} .nav {
-			margin-left: -16px;
-			margin-right: -16px;
+			margin-left: -10px;
+			margin-right: -10px;
 
 		}
 		#{div} .nav > li {
 			text-transform: uppercase;
 		}
-		@media (max-width: 991px) {
-			#{div} .submenu {
-				font-size:14px;
-				position:static;
-			}
-		}
-
+		
 	</style>
-	<ul class="nav">
+	<ul class="nav justify-content-center">
 		{data.childs::mitem}
 	</ul>
 	<script>
