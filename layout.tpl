@@ -34,8 +34,8 @@
 			var div = $('#{div}');
 			div.find('li.subgroups > a').hover( function () {
 				var li = $(this).parent();
-				div.find('li').not(li).find('.submenu').stop().css('height','auto').slideUp().css('z-index',1);
-				$(li).find('.submenu').stop().css('height','auto').slideDown().css('z-index',2);
+				div.find('li').not(li).find('.submenu').stop().slideUp().css('z-index',1);
+				$(li).find('.submenu').stop().slideDown().css('z-index',2);
 			});
 			Once.exec('groupsdownbreak', function() {
 				$('body').click( function (e) {
@@ -43,10 +43,10 @@
 						if ($(e.target).is('a')) var a = $(e.target);
 						else var a = $(e.target).parents('a:first');
 						if (!a.parent().find('>.submenu').length) {
-							div.find('.submenu').stop().css('height','auto').slideUp('fast');
+							div.find('.submenu').stop().slideUp('fast');
 						}
 					} else {
-						div.find('.submenu').stop().css('height','auto').slideUp('fast');
+						div.find('.submenu').stop().slideUp('fast');
 					}
 				});
 			});
@@ -63,4 +63,13 @@
 		<div class="submenu">
 			{::subitem}
 		</div>
-		{subitem:}<a href="{Ссылка}">{Название}</a>
+		{subitem:}<a href="{Ссылка}">{Название}</a> 
+{mobile:}
+	<ul class="nav">
+		{data.childs::mitemm}
+	</ul>
+	{mitemm:}
+		<li class="nav-item level1 {childs?:strsubgroups}">
+			<a class="nav-link" href="{Ссылка}">{Название}{childs?:mark}</a>
+			{childs:subgroup}
+		</li>
