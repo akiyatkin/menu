@@ -5,17 +5,15 @@
 		}
 		#{div} .submenu {
 			background-color:{config.subbg};
-			padding-bottom:0.5rem;
+			
 			text-transform: none;
 			position:absolute;
 			display:none;
+			/*padding-bottom:0.5rem;
 			border-radius: 0 0 20px 10px;
+			border-radius: 0 0 2px 2px;*/
 		}
-		#{div} .submenu a {
-			padding:0px 10px;
-			margin-bottom:3px;
-			display:block;	
-		}
+		
 		#{div} .nav {
 			margin-left: -10px;
 			margin-right: -10px;
