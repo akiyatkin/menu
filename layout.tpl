@@ -61,7 +61,7 @@
 		<div class="submenu">
 			{::subitem}
 		</div>
-		{subitem:}<a href="{Ссылка}">{Название}</a> 
+		{subitem:}<a href="{Ссылка}">{Название}</a><wbr> 
 {mobile:}
 	<ul class="nav">
 		{data.childs::mitemm}
