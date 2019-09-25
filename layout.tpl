@@ -14,11 +14,11 @@
 			border-radius: 0 0 2px 2px;*/
 		}
 		
-		#{div} .nav {
+		/*#{div} .nav {
 			margin-left: -10px;
 			margin-right: -10px;
 
-		}
+		}*/
 		#{div} .nav > li {
 			text-transform: uppercase;
 		}
