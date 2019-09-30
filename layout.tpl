@@ -4,6 +4,9 @@
 			font-size:110%;
 		}
 		#{div} .submenu {
+			
+			display: flex;
+			flex-direction: column;
 			background-color:{config.subbg};
 			
 			text-transform: none;
@@ -61,7 +64,7 @@
 		<div class="submenu">
 			{::subitem}
 		</div>
-		{subitem:}<a href="{Ссылка}">{Название}</a> <wbr>
+		{subitem:}<a href="{Ссылка}">{Название}</a>
 {mobile:}
 	<ul class="nav">
 		{data.childs::mitemm}
