@@ -64,13 +64,13 @@
 		<div class="submenu">
 			{::subitem}
 		</div>
-		{subitem:}<a href="{Ссылка}">{Название}</a>
+		{subitem:}<a href="{Ссылка}">{Название}</a><span> </span>
 {mobile:}
 	<ul class="nav">
 		{data.childs::mitemm}
 	</ul>
 	{mitemm:}
 		<li class="nav-item level1 {childs?:strsubgroups}">
-			<a class="nav-link" href="{Ссылка}">{Название}{childs?:mark}</a>
+			<a class="nav-link" href="{Ссылка}">{Название}{childs?:mark}</a><span> </span> 
 			{childs:subgroup}
 		</li>
