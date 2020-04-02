@@ -3,9 +3,10 @@
 use infrajs\ans\Ans;
 use infrajs\load\Load;
 use infrajs\excel\Xlsx;
+use akiyatkin\menu\Menu;
 
 $name = Ans::get('name','string','Главное меню');
-$src = Ans::get('src','string','~pages/Параметры.xlsx');
+$src = Ans::get('src','string',Menu::$conf['paramsrc']);
 
 
 $list = Load::loadJSON('-excel/get/group/'.$name.'/?src='.$src);
@@ -33,7 +34,6 @@ foreach ($list['data'] as $i => &$row) {
 	
 	$levels[$row['Уровень']] = true;
 	$prev = &$row;
-	
 }
 
 Xlsx::runGroups($ans, function &(&$group){
@@ -41,6 +41,7 @@ Xlsx::runGroups($ans, function &(&$group){
 	$r = null;
 	return $r;
 });
-$ans['descr'] = $list['descr'];
+
+$ans['descr'] = isset($list['descr'])? $list['descr'] : [];
 unset($ans['Уровень']);
 return Ans::ans($ans);

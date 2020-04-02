@@ -1,3 +1,4 @@
 {
-	"conf":"akiyatkin\\menu\\Menu"
+	"conf":"akiyatkin\\menu\\Menu",
+	"paramsrc":"~auto/pages/Параметры.xlsx"
 }
