@@ -1,27 +1,13 @@
 {root:}
 	<style>
-		#{div} {
-			font-size:110%;
-		}
 		#{div} .submenu {
-			
 			display: flex;
 			flex-direction: column;
 			background-color:{config.subbg};
-			
 			text-transform: none;
 			position:absolute;
 			display:none;
-			/*padding-bottom:0.5rem;
-			border-radius: 0 0 20px 10px;
-			border-radius: 0 0 2px 2px;*/
 		}
-		
-		/*#{div} .nav {
-			margin-left: -10px;
-			margin-right: -10px;
-
-		}*/
 		#{div} .nav > li {
 			text-transform: uppercase;
 		}
