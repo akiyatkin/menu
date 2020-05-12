@@ -1,3 +1,11 @@
+{justrow:}
+	<ul class="nav justify-content-center">
+		{data.childs::mitemrow}
+	</ul>
+	{mitemrow:}
+	<li class="nav-item {childs?:strsubgroups}">
+		<a class="nav-link" href="{Ссылка}">{Название}</a>
+	</li>
 {root:}
 	<style>
 		#{div} .submenu {
