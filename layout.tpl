@@ -24,8 +24,13 @@
 	<ul class="nav justify-content-center">
 		{data.childs::mitem}
 	</ul>
-	<script>
-		domready(function(){
+	<script type="module">
+		import { DOM } from '/vendor/akiyatkin/load/DOM.js'
+		import { CDN } from '/vendor/akiyatkin/load/CDN.js'
+
+		DOM.wait('load').then(async () => {
+			await CDN.load('jquery')
+
 			var div = $('#{div}');
 			div.find('li.subgroups > a').hover( function () {
 				var li = $(this).parent();
