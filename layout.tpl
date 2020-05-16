@@ -29,7 +29,7 @@
 		import { CDN } from '/vendor/akiyatkin/load/CDN.js'
 
 		DOM.wait('load').then(async () => {
-			await CDN.load('jquery')
+			await CDN.on('load','jquery')
 
 			var div = $('#{div}');
 			div.find('li.subgroups > a').hover( function () {
