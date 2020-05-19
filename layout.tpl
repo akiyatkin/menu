@@ -25,12 +25,10 @@
 		{data.childs::mitem}
 	</ul>
 	<script type="module">
-		import { DOM } from '/vendor/akiyatkin/load/DOM.js'
 		import { CDN } from '/vendor/akiyatkin/load/CDN.js'
 
-		DOM.wait('load').then(async () => {
-			await CDN.on('load','jquery')
-
+		CDN.on('load','jquery').then(async () => {
+			
 			var div = $('#{div}');
 			div.find('li.subgroups > a').hover( function () {
 				var li = $(this).parent();
