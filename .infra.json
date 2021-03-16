@@ -1,4 +1,5 @@
 {
 	"conf":"akiyatkin\\menu\\Menu",
+	"css":"style.css",
 	"paramsrc":"~auto/pages/Параметры.xlsx"
 }

@@ -1,4 +1,5 @@
 {
-    "tpl":"-menu/layout.tpl",
-    "json":"-menu/"
+    "tpl":"-menu/layout.html",
+    "json":"-menu/",
+    "activelink":true
 }
