@@ -5,7 +5,9 @@
 	display: flex;
 	flex-direction: row;
 	margin: 0 var(--nstep);
+	align-items: center;
 }
+
 .akmenu .item {
 	margin: 0 var(--step);
 }
@@ -13,6 +15,7 @@
 	cursor: pointer;
 }
 .akmenu .childs {
+	min-width: 145px;
 	display: flex;
 	flex-direction: column;
 	background-color:black;	
@@ -30,9 +33,10 @@
 
 .akmenu .childs.show {
 	opacity: 1;
-	max-height: 200px;
+	max-height: 300px;
 }
 .akmenu .title {
+	white-space: nowrap;
 	padding: var(--step);
 	text-transform: uppercase;
 }
