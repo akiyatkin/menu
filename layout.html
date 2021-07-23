@@ -1,41 +1,19 @@
-{*:}
-	<!--
-		style.css
-		<div class="akmenu">
-			<div class="item group?">
-				<div class="title">
-					<a />
-					<svg />?
-				</div>
-				<div class="childs">?
-					<a />
-				</div>
-			</div>
-		</div>
-	-->
 {root:}
 		<div class="akmenu">
 			{data.childs::mitem}
 		</div>
-		
-
-		<script type="module">
-			import { CDN } from '/vendor/akiyatkin/load/CDN.js'
+		<script type="module" async>
 			const div = document.getElementById('{div}').getElementsByClassName('akmenu')[0]
 			const cls = (cls, el = div) => el.getElementsByClassName(cls)
 			const tag = (tag, el = div) => el.getElementsByTagName(tag)
 			const items = cls('item')
-			const event = (el, type, fn) => el.addEventListener(type, e => {
-				if (!div.closest('body')) return
-				return fn(e)
-			})
 			const hideall = () => {
 				for (const childs of cls('childs')) childs.classList.remove('show')
 			}
 			for (const item of items) {
-				const svg = tag('svg', item)[0]
-				if (!svg) continue;
-				event(svg, 'click', () => {
+				if (!item.classList.contains('group')) continue
+				const btn = cls('title', item)[0]
+				btn.addEventListener('click', () => {
 					const childs = cls('childs', item)[0]
 					const is = childs.classList.contains('show')
 					hideall()
@@ -43,7 +21,7 @@
 					else childs.classList.add('show')
 				})
 			}
-			event(document.body, 'click', (e) => {
+			document.body.addEventListener('click', (e) => {
 				let el = e.target
 				const path = [el]
 				while (el && el.parentElement) path.push(el = el.parentElement)
@@ -55,13 +33,19 @@
 			
 		</script>
 	{mitem:}
-		<div class="item {childs?:strsubgroups}">
-			<div class="title">
-				<a href="{Ссылка}">{Название}</a>{childs?:mark}
-			</div>
+		{~length(childs)?:mitemchilds?:mitemtitle}
+	{mitemchilds:}
+		<div class="item group">
+			<button class="title"><span>{Название}</span>{:mark}</button>
 			{childs:subgroup}
 		</div>
-	{mark:}&nbsp;{:svg.chevrone}
+	{mitemtitle:}
+		<div class="item">
+			<a class="title" href="{Ссылка}">
+				{Название}
+			</a>
+		</div>
+	{mark:}{:svg.chevrone}
 	{strsubgroups:}group
 	{subgroup:}
 		<div class="childs">
@@ -71,7 +55,7 @@
 			<a href="{Ссылка}">{Название}</a>
 {svg.chevrone:}
 	<svg width="20px" height="20px" viewBox="0 0 438.533 438.533" 
-		style="margin-top: -2px; transform: rotate(90deg); fill: currentColor; enable-background:new 0 0 438.533 438.533;" 
+		style="transform: rotate(90deg); fill: currentColor; enable-background:new 0 0 438.533 438.533;" 
 		xml:space="preserve">
 		<path d="M409.133,109.203c-19.608-33.592-46.205-60.189-79.798-79.796C295.736,9.801,259.058,0,219.273,0
 			c-39.781,0-76.47,9.801-110.063,29.407c-33.595,19.604-60.192,46.201-79.8,79.796C9.801,142.8,0,179.489,0,219.267
