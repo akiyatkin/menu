@@ -35,6 +35,7 @@
 	overflow: hidden;
 	transition: opacity 0.2s, max-height 0.3s;
 	padding-bottom: var(--step);
+	padding-top: var(--step);
 }
 .akmenu .childs a {
 	line-height: 170%;
