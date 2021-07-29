@@ -9,7 +9,7 @@
 }
 
 .akmenu .item {
-	margin: 0 var(--step);
+	/*padding: 0 var(--step);*/
 }
 .akmenu .group .title {
 	white-space: nowrap;
@@ -51,6 +51,6 @@
 }
 .akmenu .title {
 	white-space: nowrap;
-	padding: var(--step);
+	padding: var(--step) calc(var(--step) * 2);
 	text-transform: uppercase;
 }
