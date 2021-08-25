@@ -3,6 +3,7 @@
 			{data.childs::mitem}
 		</div>
 		<script type="module" async>
+			import { Activelink } from "/vendor/infrajs/activelink/Activelink.js"
 			const div = document.getElementById('{div}').getElementsByClassName('akmenu')[0]
 			const cls = (cls, el = div) => el.getElementsByClassName(cls)
 			const tag = (tag, el = div) => el.getElementsByTagName(tag)
@@ -30,7 +31,7 @@
 				}
 				hideall() //Скрываем меню
 			})
-			
+			Activelink(div)
 		</script>
 	{mitem:}
 		{~length(childs)?:mitemchilds?:mitemtitle}
